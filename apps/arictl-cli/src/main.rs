@@ -67,6 +67,8 @@ enum Command {
         #[command(subcommand)]
         action: WhitelistAction,
     },
+    /// Print JSON-RPC schema (for agent/LLM consumption)
+    Schema,
 }
 
 #[derive(Subcommand)]
@@ -183,6 +185,9 @@ fn run_direct(cmd: Command) {
             let del_result = engine.run(&ids);
             display::print_delete(&del_result);
         }
+        Command::Schema => {
+            print_json(&rpc_schema());
+        }
         Command::Whitelist { action } => match action {
             WhitelistAction::List => {
                 let patterns = engine.whitelist().patterns().to_vec();
@@ -240,6 +245,113 @@ fn interactive_select(result: &arictl_core::types::ScanResult) -> Vec<String> {
         .collect()
 }
 
+fn rpc_schema() -> serde_json::Value {
+    serde_json::json!({
+        "openrpc": "1.0.0-rc1",
+        "info": {
+            "title": "arictl RPC",
+            "version": env!("CARGO_PKG_VERSION"),
+            "description": "macOS system cleanup tool — JSON-RPC 2.0 over stdio. Send one JSON-RPC request per line, read one response per line. Notifications have no id field."
+        },
+        "methods": [
+            {
+                "name": "server.status",
+                "summary": "Get server status and version info",
+                "params": [],
+                "result": {
+                    "description": "ServerStatus: version, pid, uptime_secs, operations_count, addr"
+                }
+            },
+            {
+                "name": "rpc.discover",
+                "summary": "Get this schema",
+                "params": [],
+                "result": {
+                    "description": "OpenRPC schema describing all available methods"
+                }
+            },
+            {
+                "name": "clean.scan",
+                "summary": "Scan for cleanable items across categories",
+                "params": [
+                    {
+                        "name": "categories",
+                        "schema": {"type": "array", "items": {"type": "string"}},
+                        "required": false,
+                        "summary": "Filter by category IDs (omit for all)"
+                    }
+                ],
+                "result": {
+                    "description": "ScanResult: items[], total_size, categories map"
+                }
+            },
+            {
+                "name": "clean.preview",
+                "summary": "Preview deletion of specific items",
+                "params": [
+                    {
+                        "name": "item_ids",
+                        "schema": {"type": "array", "items": {"type": "string"}},
+                        "required": true,
+                        "summary": "Item IDs to preview (from scan result)"
+                    }
+                ],
+                "result": {
+                    "description": "PreviewResult: items[] (will_delete, size, path), protected_skipped[]"
+                }
+            },
+            {
+                "name": "clean.run",
+                "summary": "Execute deletion of specific items (moves to Trash)",
+                "params": [
+                    {
+                        "name": "item_ids",
+                        "schema": {"type": "array", "items": {"type": "string"}},
+                        "required": true,
+                        "summary": "Item IDs to delete (from scan result)"
+                    }
+                ],
+                "result": {
+                    "description": "DeleteResult: completed[], failed[], total_freed"
+                }
+            },
+            {
+                "name": "clean.whitelist",
+                "summary": "Manage whitelist patterns",
+                "params": [
+                    {
+                        "name": "action",
+                        "schema": {"type": "string", "enum": ["list", "add", "remove"]},
+                        "required": true,
+                        "summary": "list → show patterns, add → protect a path, remove → unprotect"
+                    },
+                    {
+                        "name": "pattern",
+                        "schema": {"type": "string"},
+                        "required": false,
+                        "summary": "Glob pattern (required for add/remove)"
+                    }
+                ],
+                "result": {
+                    "description": "list → {\"patterns\": [...]}, add/remove → {\"status\": \"added|removed\", \"pattern\": \"...\"}"
+                }
+            }
+        ],
+        "notifications": [
+            {
+                "name": "$scan.progress",
+                "summary": "Progress notification emitted during clean.scan for long-running scans",
+                "params": [
+                    {"name": "category", "schema": {"type": "string"}, "summary": "Category ID being scanned"},
+                    {"name": "status", "schema": {"type": "string", "enum": ["start", "item", "done"]}, "summary": "Scan phase"},
+                    {"name": "item", "schema": {"type": "string"}, "required": false, "summary": "Item label being evaluated (when status=item)"},
+                    {"name": "size", "schema": {"type": "integer"}, "required": false, "summary": "Cumulative category size (when status=done)"}
+                ]
+            }
+        ]
+    })
+}
+
 fn print_json(value: &impl serde::Serialize) {
     if let Ok(json) = serde_json::to_string_pretty(value) {
         println!("{json}");
@@ -283,6 +395,9 @@ fn run_rpc_mode() {
 
 fn dispatch_rpc(req: &Request, engine: &Mutex<Engine>) -> Result<serde_json::Value, String> {
     match req.method.as_str() {
+        "rpc.discover" => {
+            Ok(rpc_schema())
+        }
         "server.status" => {
             let status = ServerStatus {
                 version: env!("CARGO_PKG_VERSION").into(),

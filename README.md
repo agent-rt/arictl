@@ -14,6 +14,8 @@ arictl clean --categories purge -y    # skip confirmation (for scripts)
 
 arictl whitelist list                # see protected paths
 arictl whitelist add "~/important"   # protect a path
+
+arictl schema                        # print JSON-RPC schema (for agents)
 ```
 
 ## Features
@@ -91,6 +93,18 @@ arictl clean --all -y
 `clean` chains `scan` → `preview` → confirmation prompt → `run`. Add `-y` to skip all prompts for scripting/agent use.
 
 With `--interactive` / `-i`, the scan results are displayed as a table, then a terminal checklist lets you pick items with `Space`. `Enter` runs the selected items directly — no additional text prompts.
+
+### RPC Schema (for agents)
+
+```bash
+# CLI: print the full JSON-RPC schema
+arictl schema
+
+# RPC mode: introspect at runtime
+echo '{"jsonrpc":"2.0","id":1,"method":"rpc.discover"}' | arictl --rpc
+```
+
+The schema follows the OpenRPC specification and describes all available methods, their parameters, return types, and notifications. Agents should call `rpc.discover` first to understand the API surface.
 
 ### Whitelist
 
