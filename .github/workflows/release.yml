@@ -15,7 +15,7 @@ permissions:
 
 env:
   PRODUCT: arictl
-  TAP_REPO: agent-rt/homework-tap
+  TAP_REPO: agent-rt/homebrew-tap
   TARGET: aarch64-apple-darwin
 
 jobs:
