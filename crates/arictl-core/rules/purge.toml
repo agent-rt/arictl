@@ -1,0 +1,234 @@
+category_id = "purge"
+category_label = "Project Build Artifacts"
+
+# Scans ~ at depth 1-2 for known build output directories.
+# Safety: hidden dirs excluded, project indicator required,
+# exclude_indicators protect non-matching project types,
+# min_age_days = 7 protects recently modified builds.
+# Override paths via ~/.config/arictl/rules/purge.toml.
+
+# ── Rust ─────────────────────────────────────────────────────
+
+[[items]]
+id = "rust_target"
+label = "Rust target/ directories"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "target", indicators = ["Cargo.lock"], min_age_days = 7 }
+min_size = 104857600
+
+# ── JavaScript / TypeScript ─────────────────────────────────
+
+[[items]]
+id = "node_modules"
+label = "JS/TS node_modules/ directories"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "node_modules", indicators = ["package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lock"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Zig ──────────────────────────────────────────────────────
+
+[[items]]
+id = "zig_build"
+label = "Zig project output directories"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "zig-out", indicators = ["build.zig.zon", "build.zig"], min_age_days = 7 }
+min_size = 104857600
+
+# ── JVM ──────────────────────────────────────────────────────
+
+[[items]]
+id = "gradle_build"
+label = "Gradle build/ directories"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "build", indicators = ["settings.gradle", "build.gradle", "build.gradle.kts"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Ruby ────────────────────────────────────────────────────
+
+[[items]]
+id = "ruby_bundle"
+label = "Ruby vendor/bundle directories"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "vendor/bundle", indicators = ["Gemfile.lock"], min_age_days = 7 }
+min_size = 104857600
+
+# ── PHP vendor (exclude Rails / Go projects) ─────────────────
+
+[[items]]
+id = "php_vendor"
+label = "PHP vendor/ directories"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "vendor", indicators = ["composer.json"], exclude_indicators = ["Gemfile", "go.mod"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Next.js ────────────────────────────────────────────────
+
+[[items]]
+id = "next_build"
+label = "Next.js build output"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".next", indicators = ["next.config.js", "next.config.mjs", "next.config.ts", "next.config.mts"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Nuxt ───────────────────────────────────────────────────
+
+[[items]]
+id = "nuxt_build"
+label = "Nuxt build output"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".nuxt", indicators = ["nuxt.config.ts", "nuxt.config.js", "nuxt.config.mjs"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Nuxt/Nitro Output ──────────────────────────────────────
+
+[[items]]
+id = "nuxt_output"
+label = "Nuxt/Nitro server output"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".output", indicators = ["nuxt.config.ts", "nuxt.config.js", "nitro.config.ts", "nitro.config.mjs"], min_age_days = 7 }
+min_size = 104857600
+
+# ── SvelteKit ──────────────────────────────────────────────
+
+[[items]]
+id = "sveltekit_build"
+label = "SvelteKit build output"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".svelte-kit", indicators = ["svelte.config.js", "svelte.config.ts"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Astro ──────────────────────────────────────────────────
+
+[[items]]
+id = "astro_build"
+label = "Astro build output"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".astro", indicators = ["astro.config.mjs", "astro.config.ts", "astro.config.js"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Turborepo ──────────────────────────────────────────────
+
+[[items]]
+id = "turbo_cache"
+label = "Turborepo local cache"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".turbo", indicators = ["turbo.json"], min_age_days = 7 }
+min_size = 52428800
+
+# ── Dart / Flutter ─────────────────────────────────────────
+
+[[items]]
+id = "dart_tool"
+label = "Dart/Flutter .dart_tool"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".dart_tool", indicators = ["pubspec.yaml"], min_age_days = 7 }
+min_size = 104857600
+
+# ── Zig Cache ──────────────────────────────────────────────
+
+[[items]]
+id = "zig_cache_dir"
+label = "Zig project .zig-cache"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".zig-cache", indicators = ["build.zig", "build.zig.zon"], min_age_days = 7 }
+min_size = 52428800
+
+# ── Angular ────────────────────────────────────────────────
+
+[[items]]
+id = "angular_build"
+label = "Angular build cache"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".angular", indicators = ["angular.json"], min_age_days = 7 }
+min_size = 52428800
+
+# ── Swift Package Manager ─────────────────────────────────
+
+[[items]]
+id = "swift_build"
+label = "Swift Package Manager .build"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".build", indicators = ["Package.swift"], min_age_days = 7 }
+min_size = 104857600
+
+# ── CocoaPods ──────────────────────────────────────────────
+
+[[items]]
+id = "cocoapods_pods"
+label = "CocoaPods Pods/"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "Pods", indicators = ["Podfile"], min_age_days = 7 }
+min_size = 52428800
+
+# ── Expo ───────────────────────────────────────────────────
+
+[[items]]
+id = "expo_build"
+label = "Expo build cache"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".expo", indicators = ["app.json", "app.config.js", "app.config.ts"], min_age_days = 7 }
+min_size = 52428800
+
+# ── Python Virtual Environments ────────────────────────────
+
+[[items]]
+id = "python_venv"
+label = "Python virtual environments (.venv)"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".venv", indicators = ["pyproject.toml", "requirements.txt", "Pipfile"], exclude_indicators = [".python-version"], min_age_days = 14 }
+min_size = 104857600
+
+[[items]]
+id = "python_venv_dir"
+label = "Python virtual environments (venv)"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = "venv", indicators = ["pyproject.toml", "requirements.txt", "Pipfile"], exclude_indicators = [".python-version"], min_age_days = 14 }
+min_size = 104857600
+
+# ── Python Test Environments ───────────────────────────────
+
+[[items]]
+id = "tox_environments"
+label = "tox test environments"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".tox", indicators = ["tox.ini", "pyproject.toml"], min_age_days = 7 }
+min_size = 52428800
+
+[[items]]
+id = "nox_environments"
+label = "nox test environments"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".nox", indicators = ["noxfile.py"], min_age_days = 7 }
+min_size = 52428800
+
+# ── CXX (Rust-JS bridge) ──────────────────────────────────
+
+[[items]]
+id = "rust_cxx"
+label = "Rust CXX build artifacts"
+paths = ["~"]
+strategy = "remove_subdirs"
+strategy_args = { subdir = ".cxx", indicators = ["Cargo.toml"], min_age_days = 7 }
+min_size = 52428800

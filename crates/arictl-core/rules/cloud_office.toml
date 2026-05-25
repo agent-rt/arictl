@@ -1,0 +1,90 @@
+category_id = "cloud_office"
+category_label = "Cloud Storage & Office"
+
+# ── Cloud Storage ─────────────────────────────────────────
+
+[[items]]
+id = "dropbox_cache"
+label = "Dropbox Cache"
+paths = ["~/Library/Caches/com.dropbox", "~/Library/Caches/com.getdropbox.dropbox"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "googledrive_cache"
+label = "Google Drive Cache"
+paths = ["~/Library/Caches/com.google.GoogleDrive"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "onedrive_cache"
+label = "OneDrive Cache"
+paths = ["~/Library/Caches/com.microsoft.OneDrive"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "baidunetdisk_cache"
+label = "Baidu Netdisk Cache"
+paths = ["~/Library/Caches/com.baidu.netdisk"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "aliyundrive_cache"
+label = "Alibaba Teambition Drive Cache"
+paths = ["~/Library/Caches/com.alibaba.teambitiondisk"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "box_drive_cache"
+label = "Box Drive Cache"
+paths = ["~/Library/Caches/com.box.desktop"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Office Applications ───────────────────────────────────
+
+[[items]]
+id = "word_cache"
+label = "Microsoft Word Cache"
+paths = ["~/Library/Caches/com.microsoft.Word"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "excel_cache"
+label = "Microsoft Excel Cache"
+paths = ["~/Library/Caches/com.microsoft.Excel"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "powerpoint_cache"
+label = "Microsoft PowerPoint Cache"
+paths = ["~/Library/Caches/com.microsoft.Powerpoint"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "outlook_cache"
+label = "Microsoft Outlook Cache"
+paths = ["~/Library/Caches/com.microsoft.Outlook"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "iwork_cache"
+label = "Apple iWork Cache"
+paths = ["~/Library/Caches/com.apple.iWork"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "wps_cache"
+label = "WPS Office Cache"
+paths = ["~/Library/Caches/com.kingsoft.wpsoffice.mac"]
+strategy = "remove_contents"
+min_size = 52428800

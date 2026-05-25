@@ -1,0 +1,116 @@
+category_id = "editor"
+category_label = "Code Editor Caches"
+
+# ── VS Code ───────────────────────────────────────────────
+
+[[items]]
+id = "vscode_cache"
+label = "VS Code General Cache"
+paths = ["~/Library/Caches/com.microsoft.VSCode"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "vscode_cached_data"
+label = "VS Code CachedData"
+paths = ["~/Library/Application Support/Code/CachedData"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "vscode_gpu_cache"
+label = "VS Code GPU Cache"
+paths = ["~/Library/Application Support/Code/GPUCache", "~/Library/Application Support/Code/DawnGraphiteCache", "~/Library/Application Support/Code/DawnWebGPUCache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "vscode_extension_cache"
+label = "VS Code Cached Extension VSIXs"
+paths = ["~/Library/Application Support/Code/CachedExtensionVSIXs"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "vscode_web_storage"
+label = "VS Code Web Storage"
+paths = ["~/Library/Application Support/Code/WebStorage"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "vscode_logs"
+label = "VS Code Logs"
+paths = ["~/Library/Application Support/Code/logs"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+[[items]]
+id = "vscode_ripgrep"
+label = "VS Code ripgrep Cache"
+paths = ["~/.cache/vscode-ripgrep"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Cursor ────────────────────────────────────────────────
+
+[[items]]
+id = "cursor_cache"
+label = "Cursor Editor Cache"
+paths = ["~/Library/Caches/Cursor"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "cursor_cached_data"
+label = "Cursor CachedData"
+paths = ["~/Library/Application Support/Cursor/CachedData"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "cursor_extension_cache"
+label = "Cursor CachedExtensionVSIXs"
+paths = ["~/Library/Application Support/Cursor/CachedExtensionVSIXs"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "cursor_web_storage"
+label = "Cursor Web Storage"
+paths = ["~/Library/Application Support/Cursor/WebStorage"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "cursor_gpu_cache"
+label = "Cursor GPU Cache"
+paths = ["~/Library/Application Support/Cursor/GPUCache", "~/Library/Application Support/Cursor/DawnGraphiteCache", "~/Library/Application Support/Cursor/DawnWebGPUCache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "copilot_cache"
+label = "Copilot Cache"
+paths = ["~/Library/Caches/copilot"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Zed ───────────────────────────────────────────────────
+
+[[items]]
+id = "zed_cache"
+label = "Zed Editor Cache"
+paths = ["~/Library/Caches/Zed", "~/Library/Logs/Zed"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Sublime Text ──────────────────────────────────────────
+
+[[items]]
+id = "sublime_cache"
+label = "Sublime Text Cache"
+paths = ["~/Library/Caches/com.sublimetext"]
+strategy = "remove_contents"
+min_size = 10485760

@@ -1,0 +1,10 @@
+category_id = "brew"
+category_label = "Homebrew"
+
+[[items]]
+id = "brew"
+label = "Homebrew"
+paths = ["~/Library/Caches/Homebrew", "~/Library/Caches/Homebrew/downloads"]
+strategy = "remove_contents"
+command = "brew cleanup"
+min_size = 52428800

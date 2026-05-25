@@ -1,0 +1,783 @@
+category_id = "dev_tools"
+category_label = "Developer Tools"
+
+# ── Xcode ──────────────────────────────────────────────────
+
+[[items]]
+id = "xcode_derived"
+label = "Xcode DerivedData"
+paths = ["~/Library/Developer/Xcode/DerivedData"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "xcode_documentation_cache"
+label = "Xcode Documentation Cache"
+paths = ["/Library/Developer/Xcode/DocumentationCache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "xcode_device_support"
+label = "Xcode DeviceSupport (keeps 2 newest)"
+paths = ["~/Library/Developer/Xcode/iOS DeviceSupport", "~/Library/Developer/Xcode/watchOS DeviceSupport", "~/Library/Developer/Xcode/tvOS DeviceSupport"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "xcode_simulator_cache"
+label = "Xcode Simulator Caches"
+paths = ["~/Library/Developer/CoreSimulator/Caches", "~/Library/Developer/CoreSimulator/Devices/*/data/tmp", "~/Library/Logs/CoreSimulator"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "xcode_app_cache"
+label = "Xcode App Cache"
+paths = ["~/Library/Caches/com.apple.dt.Xcode", "~/Library/Developer/Xcode/iOS Device Logs", "~/Library/Developer/Xcode/watchOS Device Logs", "~/Library/Developer/Xcode/Products", "~/Library/Developer/Xcode/DocumentationIndex"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── JavaScript / TypeScript ────────────────────────────────
+
+[[items]]
+id = "npm"
+label = "npm Cache"
+paths = ["~/.npm/_cacache", "~/.npm/_npx", "~/.npm/_prebuilds"]
+strategy = "remove_contents"
+command = "npm cache clean --force"
+min_size = 10485760
+
+[[items]]
+id = "yarn"
+label = "Yarn Cache"
+paths = ["~/.yarn/cache", "~/Library/Caches/Yarn"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "pnpm"
+label = "pnpm Store"
+paths = ["~/Library/pnpm/store"]
+strategy = "remove_contents"
+command = "pnpm store prune"
+min_size = 52428800
+
+[[items]]
+id = "bun"
+label = "bun Cache"
+paths = ["~/.bun/install/cache"]
+strategy = "remove_contents"
+command = "bun pm cache rm"
+min_size = 10485760
+
+[[items]]
+id = "corepack"
+label = "Corepack Cache"
+paths = ["~/.cache/node/corepack"]
+strategy = "remove_contents"
+command = "corepack cache clean"
+min_size = 10485760
+
+[[items]]
+id = "typescript"
+label = "TypeScript Cache"
+paths = ["~/.cache/typescript"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "turbo"
+label = "Turborepo Cache"
+paths = ["~/.turbo/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "vite"
+label = "Vite Cache"
+paths = ["~/.vite/cache", "~/.cache/vite"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "parcel"
+label = "Parcel Cache"
+paths = ["~/.parcel-cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "webpack"
+label = "Webpack Cache"
+paths = ["~/.cache/webpack"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "eslint"
+label = "ESLint Cache"
+paths = ["~/.cache/eslint"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "prettier"
+label = "Prettier Cache"
+paths = ["~/.cache/prettier"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "electron"
+label = "Electron / node-gyp Cache"
+paths = ["~/.cache/electron", "~/.cache/node-gyp", "~/.node-gyp"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Rust ────────────────────────────────────────────────────
+
+[[items]]
+id = "cargo"
+label = "Cargo Registry Cache"
+paths = ["~/.cargo/registry/cache", "~/.cargo/git", "~/.rustup/downloads"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── JVM ─────────────────────────────────────────────────────
+
+[[items]]
+id = "gradle"
+label = "Gradle Cache"
+paths = ["~/.gradle/caches"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "maven"
+label = "Maven Local Repository"
+paths = ["~/.m2/repository"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "sbt"
+label = "SBT Cache"
+paths = ["~/.sbt/boot", "~/.sbt/launchers"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "ivy"
+label = "Ivy Cache"
+paths = ["~/.ivy2/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Python ──────────────────────────────────────────────────
+
+[[items]]
+id = "pip"
+label = "pip Cache"
+paths = ["~/Library/Caches/pip"]
+strategy = "remove_contents"
+command = "pip3 cache purge"
+min_size = 10485760
+
+[[items]]
+id = "uv"
+label = "uv Cache"
+paths = ["~/.cache/uv"]
+strategy = "remove_contents"
+command = "uv cache prune"
+min_size = 10485760
+
+[[items]]
+id = "poetry"
+label = "Poetry Cache"
+paths = ["~/.cache/poetry"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "ruff"
+label = "Ruff Cache"
+paths = ["~/.cache/ruff"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "mypy"
+label = "mypy Cache"
+paths = ["~/.cache/mypy"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "pytest"
+label = "pytest Cache"
+paths = ["~/.pytest_cache"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "pyenv"
+label = "pyenv Cache"
+paths = ["~/.pyenv/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "jupyter"
+label = "Jupyter Runtime"
+paths = ["~/.jupyter/runtime"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "huggingface"
+label = "HuggingFace Cache"
+paths = ["~/.cache/huggingface"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "torch"
+label = "PyTorch Cache"
+paths = ["~/.cache/torch"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "tensorflow"
+label = "TensorFlow Cache"
+paths = ["~/.cache/tensorflow"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "wandb"
+label = "Weights & Biases Cache"
+paths = ["~/.cache/wandb"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Go ──────────────────────────────────────────────────────
+
+[[items]]
+id = "go"
+label = "Go Cache"
+paths = ["~/Library/Caches/go-build", "~/go/pkg/mod"]
+strategy = "remove_contents"
+command = "go clean -modcache -cache"
+min_size = 52428800
+
+# ── Other Languages ─────────────────────────────────────────
+
+[[items]]
+id = "zig"
+label = "Zig Global Cache"
+paths = ["~/.cache/zig"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "ruby"
+label = "Ruby / Gem Cache"
+paths = ["~/.rbenv/cache", "~/.gem/specs", "~/.bundle/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "elixir"
+label = "Elixir / Hex Cache"
+paths = ["~/.hex/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "haskell"
+label = "Haskell / Cabal Cache"
+paths = ["~/.cabal/packages"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "ocaml"
+label = "OCaml / Opam Cache"
+paths = ["~/.opam/download-cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "deno"
+label = "Deno Cache"
+paths = ["~/Library/Caches/deno"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "composer"
+label = "Composer Cache"
+paths = ["~/.composer/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "bazel"
+label = "Bazel Cache"
+paths = ["~/.cache/bazel"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Misc Dev Tools ─────────────────────────────────────────
+
+[[items]]
+id = "jetbrains_toolbox"
+label = "JetBrains Toolbox Old Versions"
+paths = ["~/Library/Application Support/JetBrains/Toolbox/apps"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "jetbrains_logs"
+label = "JetBrains Logs"
+paths = ["~/Library/Logs/JetBrains"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "docker_buildx"
+label = "Docker BuildKit Cache"
+paths = ["~/.docker/buildx/cache"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "mise"
+label = "mise Cache"
+paths = ["~/Library/Caches/mise"]
+strategy = "remove_contents"
+command = "mise cache clear"
+min_size = 10485760
+
+[[items]]
+id = "kube"
+label = "kubectl Cache"
+paths = ["~/.kube/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "aws"
+label = "AWS CLI Cache"
+paths = ["~/.aws/cli/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "gcloud"
+label = "gcloud Logs"
+paths = ["~/.config/gcloud/logs"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "azure"
+label = "Azure CLI Logs"
+paths = ["~/.azure/logs"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "terraform"
+label = "Terraform Cache"
+paths = ["~/.cache/terraform"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "playwright"
+label = "Playwright Browsers Cache"
+paths = ["~/Library/Caches/ms-playwright"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "nuget"
+label = "NuGet Packages Cache"
+paths = ["~/.nuget/packages"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── AI Agent Old Versions ─────────────────────────────────
+
+[[items]]
+id = "ai_agents"
+label = "AI Agent Old Versions (Claude Code, Cursor, Copilot)"
+paths = ["~/.local/share/claude/versions", "~/.local/share/cursor-agent/versions", "~/.copilot/pkg/universal"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ══════════════════════════════════════════════════════════
+# Additional dev tool chains (Mole parity)
+# ══════════════════════════════════════════════════════════
+
+# ── Additional npm/pnpm/tnpm ────────────────────────────────
+
+[[items]]
+id = "tnpm"
+label = "tnpm Cache"
+paths = ["~/.tnpm/_cacache", "~/.tnpm/_logs"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Conda ───────────────────────────────────────────────────
+
+[[items]]
+id = "conda"
+label = "Conda Index & Tarball Cache"
+paths = ["~/.conda/pkgs"]
+strategy = "remove_contents"
+command = "conda clean --yes --index-cache --tarballs --logfiles"
+min_size = 104857600
+
+# ── Perl ───────────────────────────────────────────────────
+
+[[items]]
+id = "cpan"
+label = "CPAN Build Cache"
+paths = ["~/.cpan/build", "~/.cpan/sources"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Docker System ──────────────────────────────────────────
+
+[[items]]
+id = "docker_system"
+label = "Docker System (stale images/containers)"
+paths = []
+strategy = "remove_contents"
+command = "docker system prune --force --filter until=720h"
+min_size = 104857600
+
+# ── Nix ────────────────────────────────────────────────────
+
+[[items]]
+id = "nix"
+label = "Nix Old Garbage"
+paths = ["/nix/store"]
+strategy = "remove_contents"
+command = "nix-collect-garbage --delete-older-than 30d"
+min_size = 104857600
+
+# ── CocoaPods ──────────────────────────────────────────────
+
+[[items]]
+id = "cocoapods_cache"
+label = "CocoaPods Cache"
+paths = ["~/Library/Caches/CocoaPods"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Android Studio ─────────────────────────────────────────
+
+[[items]]
+id = "android_cache"
+label = "Android Studio Build Cache"
+paths = ["~/.android/build-cache", "~/.android/cache"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "android_studio_ide"
+label = "Android Studio IDE Cache"
+paths = ["~/Library/Caches/Google/AndroidStudio"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── Swift Package Manager ──────────────────────────────────
+
+[[items]]
+id = "swiftpm"
+label = "Swift Package Manager Cache"
+paths = ["~/.cache/swift-package-manager", "~/Library/Caches/org.swift.swiftpm"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── Xcode Interface Builder ───────────────────────────────
+
+[[items]]
+id = "ib_support"
+label = "Xcode IB Support Cache"
+paths = ["~/Library/Developer/Xcode/UserData/IB Support"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Xcode Unavailable Simulators ──────────────────────────
+
+[[items]]
+id = "xcode_sim_unavailable"
+label = "Xcode Unavailable Simulators"
+paths = ["~/Library/Developer/CoreSimulator/Devices"]
+strategy = "remove_contents"
+command = "xcrun simctl delete unavailable"
+min_size = 104857600
+
+# ── Expo ───────────────────────────────────────────────────
+
+[[items]]
+id = "expo_cli"
+label = "Expo CLI Cache"
+paths = [
+  "~/.expo/expo-go",
+  "~/.expo/android-apk-cache",
+  "~/.expo/ios-simulator-app-cache",
+  "~/.expo/native-modules-cache",
+  "~/.expo/schema-cache",
+  "~/.expo/template-cache",
+  "~/.expo/versions-cache",
+]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Shell / VCS ────────────────────────────────────────────
+
+[[items]]
+id = "oh_my_zsh"
+label = "Oh My Zsh Cache"
+paths = ["~/.oh-my-zsh/cache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "shell_history_backups"
+label = "Shell History Backups"
+paths = ["~/.bash_history.bak", "~/.zsh_history.bak", "~/.config/fish/fish_history.bak"]
+strategy = "remove_dir"
+min_size = 1048576
+
+[[items]]
+id = "pre_commit_cache"
+label = "pre-commit Cache"
+paths = ["~/.cache/pre-commit"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "zcompdump"
+label = "Zsh Completion Dump"
+paths = ["~/.zcompdump"]
+strategy = "remove_dir"
+min_size = 0
+
+[[items]]
+id = "lesshst"
+label = "less History"
+paths = ["~/.lesshst"]
+strategy = "remove_dir"
+min_size = 0
+
+# ── Network Tools Cache ────────────────────────────────────
+
+[[items]]
+id = "curl_cache"
+label = "curl Cache"
+paths = ["~/.cache/curl", "~/Library/Caches/curl"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "wget_cache"
+label = "wget Cache"
+paths = ["~/.cache/wget", "~/Library/Caches/wget"]
+strategy = "remove_contents"
+min_size = 1048576
+
+# ── Database Tools ─────────────────────────────────────────
+
+[[items]]
+id = "sequel_ace"
+label = "Sequel Ace Cache"
+paths = ["~/Library/Caches/com.sequel-ace.sequel-ace"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "sequel_pro"
+label = "Sequel Pro Cache"
+paths = ["~/Library/Caches/com.eggerapps.Sequel-Pro"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "redis_desktop"
+label = "Redis Desktop Manager Cache"
+paths = ["~/Library/Caches/redis-desktop-manager"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "navicat"
+label = "Navicat Cache"
+paths = ["~/Library/Caches/com.navicat"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "dbeaver"
+label = "DBeaver Cache"
+paths = ["~/Library/Caches/com.dbeaver"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "redis_insight"
+label = "Redis Insight Cache"
+paths = ["~/Library/Caches/com.redis.RedisInsight"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── API / Debugging Tools ─────────────────────────────────
+
+[[items]]
+id = "postman"
+label = "Postman Cache"
+paths = ["~/Library/Caches/com.postmanlabs.mac"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "insomnia"
+label = "Insomnia Cache"
+paths = ["~/Library/Caches/com.konghq.insomnia"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "tableplus"
+label = "TablePlus Cache"
+paths = ["~/Library/Caches/com.tinyapp.TablePlus"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "charles"
+label = "Charles Proxy Cache"
+paths = ["~/Library/Caches/com.charlesproxy.charles"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "proxyman"
+label = "Proxyman Cache"
+paths = ["~/Library/Caches/com.proxyman.NSProxy"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Misc Dev Apps ──────────────────────────────────────────
+
+[[items]]
+id = "unity"
+label = "Unity Editor Cache"
+paths = ["~/Library/Caches/com.unity3d"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "mongodb_compass"
+label = "MongoDB Compass Cache"
+paths = ["~/Library/Caches/com.mongodb.compass"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "github_desktop"
+label = "GitHub Desktop Cache"
+paths = ["~/Library/Caches/com.github.GitHubDesktop"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "sentry_crash"
+label = "Sentry/KSCrash Reports"
+paths = ["~/Library/Caches/SentryCrash", "~/Library/Caches/KSCrash", "~/Library/Caches/com.crashlytics.data"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "prisma_cache"
+label = "Prisma Engine Cache"
+paths = ["~/.cache/prisma"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── CI/CD / DevOps ─────────────────────────────────────────
+
+[[items]]
+id = "gitlab_runner"
+label = "GitLab Runner Cache"
+paths = ["~/.cache/gitlab-runner"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "github_actions"
+label = "GitHub Actions Cache"
+paths = ["~/.github/cache"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "circleci_cache"
+label = "CircleCI Cache"
+paths = ["~/.circleci/cache"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "sonar_cache"
+label = "SonarQube Cache"
+paths = ["~/.sonar"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Electron Dev App Caches ────────────────────────────────
+
+[[items]]
+id = "codex_cli"
+label = "Codex CLI Cache"
+paths = ["~/.codex/cache", "~/.codex/.tmp", "~/.codex/log"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "claude_dev"
+label = "Claude Desktop App Cache"
+paths = [
+  "~/Library/Application Support/Claude/Cache",
+  "~/Library/Application Support/Claude/Code Cache",
+  "~/Library/Application Support/Claude/GPUCache",
+]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "antigravity_cache"
+label = "Google Antigravity (Gemini) Cache"
+paths = [
+  "~/Library/Application Support/Antigravity/Cache",
+  "~/Library/Application Support/Antigravity/Code Cache",
+  "~/Library/Application Support/Antigravity/GPUCache",
+]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── JVM Gradle Daemon ──────────────────────────────────────
+
+[[items]]
+id = "gradle_build_cache"
+label = "Gradle Build Cache & Daemon"
+paths = ["~/.gradle/caches/build-cache", "~/.gradle/notifications", "~/.gradle/daemon", "~/.gradle/workers"]
+strategy = "remove_contents"
+min_size = 52428800

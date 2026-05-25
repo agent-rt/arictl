@@ -1,0 +1,77 @@
+category_id = "user"
+category_label = "User Essentials"
+
+# ── Trash ─────────────────────────────────────────────────
+
+[[items]]
+id = "trash"
+label = "Trash"
+paths = ["~/.Trash"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Recent Items ──────────────────────────────────────────
+
+[[items]]
+id = "recent_items"
+label = "Recent Items Lists"
+paths = [
+  "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.RecentApplications.sfl2",
+  "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.RecentDocuments.sfl2",
+  "~/Library/Preferences/com.apple.recentitems.plist",
+]
+strategy = "remove_dir"
+min_size = 0
+
+# ── Darwin User Runtime Dirs ──────────────────────────────
+
+[[items]]
+id = "darwin_runtime"
+label = "Darwin User Runtime Dirs"
+paths = ["/private/var/folders"]
+strategy = "remove_if_older"
+strategy_args = { days = 7 }
+min_size = 10485760
+
+# ── Incomplete Downloads ──────────────────────────────────
+
+[[items]]
+id = "incomplete_downloads"
+label = "Incomplete Downloads"
+paths = ["~/Downloads"]
+strategy = "remove_if_older"
+strategy_args = { days = 7 }
+min_size = 10485760
+
+# ── Messages Sticker Cache ────────────────────────────────
+
+[[items]]
+id = "messages_cache"
+label = "Messages Sticker Cache"
+paths = ["~/Library/Messages/StickerCache", "~/Library/Messages/Caches"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Finder Metadata ───────────────────────────────────────
+
+[[items]]
+id = "ds_store"
+label = ".DS_Store Files"
+paths = ["~"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 0
+
+# ── iOS Device Firmware ───────────────────────────────────
+
+[[items]]
+id = "ios_firmware"
+label = "iOS/iPadOS Device Firmware (IPSW)"
+paths = [
+  "~/Library/iTunes/iPhone Software Updates",
+  "~/Library/iTunes/iPad Software Updates",
+  "~/Library/iTunes/iPod Software Updates",
+]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 104857600

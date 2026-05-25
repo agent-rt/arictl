@@ -1,0 +1,97 @@
+category_id = "browser_cache"
+category_label = "Browser Cache"
+
+[[items]]
+id = "safari"
+label = "Safari"
+paths = ["~/Library/Caches/com.apple.Safari"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "chrome"
+label = "Chrome"
+paths = ["~/Library/Caches/Google/Chrome"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "firefox"
+label = "Firefox"
+paths = ["~/Library/Caches/Firefox", "~/Library/Application Support/Firefox/Profiles"]
+strategy = "remove_contents"
+min_size = 1048576
+
+# ── Chromium Derivatives ────────────────────────────────────
+
+[[items]]
+id = "chromium"
+label = "Chromium"
+paths = ["~/Library/Caches/Chromium"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "brave"
+label = "Brave Browser"
+paths = ["~/Library/Caches/BraveSoftware/Brave-Browser"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "edge"
+label = "Microsoft Edge"
+paths = ["~/Library/Caches/com.microsoft.edgemac"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "opera"
+label = "Opera"
+paths = ["~/Library/Caches/com.operasoftware.Opera"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "vivaldi"
+label = "Vivaldi"
+paths = ["~/Library/Caches/com.vivaldi.Vivaldi"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "yandex"
+label = "Yandex Browser"
+paths = ["~/Library/Caches/Yandex/YandexBrowser"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "arc"
+label = "Arc Browser"
+paths = ["~/Library/Caches/company.thebrowser.Browser", "~/Library/Caches/company.thebrowser.dia"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Other Browsers ──────────────────────────────────────────
+
+[[items]]
+id = "safari_safebrowsing"
+label = "Safari Safe Browsing"
+paths = ["~/Library/Caches/com.apple.Safari.SafeBrowsing"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "zen_browser"
+label = "Zen Browser"
+paths = ["~/Library/Caches/zen"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "qq_browser"
+label = "QQ Browser"
+paths = ["~/Library/Caches/com.tencent.QQBrowser3"]
+strategy = "remove_contents"
+min_size = 52428800

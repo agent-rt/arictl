@@ -1,0 +1,17 @@
+[package]
+name = "arictl"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "arictl"
+path = "src/main.rs"
+
+[dependencies]
+arictl-core = { path = "../../crates/arictl-core" }
+serde_json.workspace = true
+clap.workspace = true
+serde.workspace = true
+colored.workspace = true
+dialoguer.workspace = true

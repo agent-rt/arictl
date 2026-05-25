@@ -1,0 +1,106 @@
+category_id = "system"
+category_label = "System Caches & Logs"
+
+# ── System Caches ─────────────────────────────────────────
+
+[[items]]
+id = "system_cache"
+label = "System Library Caches"
+paths = ["/Library/Caches"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 104857600
+
+[[items]]
+id = "system_temp"
+label = "System Temporary Files"
+paths = ["/private/tmp", "/private/var/tmp"]
+strategy = "remove_if_older"
+strategy_args = { days = 7 }
+min_size = 10485760
+
+[[items]]
+id = "system_crash_reports"
+label = "System Crash Reports"
+paths = ["/Library/Logs/DiagnosticReports"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+[[items]]
+id = "system_logs"
+label = "System Logs"
+paths = ["/private/var/log"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+[[items]]
+id = "asl_logs"
+label = "Apple System Logs"
+paths = ["/var/log/asl"]
+strategy = "remove_if_older"
+strategy_args = { days = 7 }
+min_size = 1048576
+
+[[items]]
+id = "third_party_logs"
+label = "Third-Party System Logs"
+paths = ["/Library/Logs/Adobe", "/Library/Logs/CreativeCloud"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+[[items]]
+id = "macos_installer"
+label = "macOS Installer Data"
+paths = ["/macOS Install Data"]
+strategy = "remove_if_older"
+strategy_args = { days = 14 }
+min_size = 104857600
+
+[[items]]
+id = "macos_install_apps"
+label = "macOS Installer Applications"
+paths = ["/Applications/Install macOS"]
+strategy = "remove_if_older"
+strategy_args = { days = 14 }
+min_size = 104857600
+
+[[items]]
+id = "system_updates"
+label = "System Library Updates"
+paths = ["/Library/Updates"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "icon_services_store"
+label = "System Icon Services Store"
+paths = ["/Library/Caches/com.apple.iconservices.store"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "system_diagnostics"
+label = "System Diagnostics"
+paths = ["/private/var/db/diagnostics"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+[[items]]
+id = "system_power_logs"
+label = "System Power Logs"
+paths = ["/private/var/db/powerlog"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+[[items]]
+id = "gpu_caches"
+label = "System GPU Caches"
+paths = ["/private/var/folders"]
+strategy = "remove_if_older"
+strategy_args = { days = 1 }
+min_size = 10485760

@@ -1,0 +1,612 @@
+category_id = "app_cache"
+category_label = "Application Caches"
+
+# ── macOS System Caches ───────────────────────────────────
+
+[[items]]
+id = "saved_application_state"
+label = "Saved Application State"
+paths = ["~/Library/Saved Application State"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "quicklook_cache"
+label = "QuickLook Thumbnails"
+paths = ["~/Library/Caches/com.apple.QuickLook.thumbnailcache", "~/Library/Caches/Quick Look"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "appstore_cache"
+label = "App Store Cache"
+paths = ["~/Library/Caches/com.apple.appstore"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "photoanalysisd"
+label = "Photo Analysis Cache"
+paths = ["~/Library/Caches/com.apple.photoanalysisd"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "apple_akd"
+label = "Apple AKD Cache"
+paths = ["~/Library/Caches/com.apple.akd"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "webkit_cache"
+label = "WebKit Network Cache"
+paths = ["~/Library/Caches/com.apple.WebKit.Networking"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "iconservices"
+label = "Icon Services Cache"
+paths = ["~/Library/Caches/com.apple.iconservices"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "diagnostic_reports"
+label = "User Diagnostic Reports"
+paths = ["~/Library/Logs/DiagnosticReports"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 1048576
+
+[[items]]
+id = "identity_caches"
+label = "Identity Caches"
+paths = ["~/Library/IdentityCaches"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "suggestions"
+label = "Siri Suggestions Cache"
+paths = ["~/Library/Suggestions"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "calendar_cache"
+label = "Calendar Cache"
+paths = ["~/Library/Calendars/Calendar Cache"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "addressbook_photos"
+label = "AddressBook Photo Cache"
+paths = ["~/Library/Application Support/AddressBook/Sources/*/Photos.cache"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "apple_media_services"
+label = "Apple Media Services Cache"
+paths = ["~/Library/Caches/com.apple.amp.mediasevicesd"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "apple_helpd"
+label = "Apple Help Cache"
+paths = ["~/Library/Caches/com.apple.helpd"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "apple_geod"
+label = "GeoServices Cache"
+paths = ["~/Library/Caches/GeoServices"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "apple_parsecd"
+label = "Parsec Cache"
+paths = ["~/Library/Caches/com.apple.parsecd"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "apple_duetexpertd"
+label = "Duet Expert Cache"
+paths = ["~/Library/Caches/com.apple.duetexpertd"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "apple_python"
+label = "Apple Python Cache"
+paths = ["~/Library/Caches/com.apple.python"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "apple_rosetta"
+label = "Rosetta Update Cache"
+paths = ["~/Library/Caches/com.apple.rosetta.update"]
+strategy = "remove_contents"
+min_size = 1048576
+
+[[items]]
+id = "mail_downloads"
+label = "Mail Downloads"
+paths = ["~/Library/Mail Downloads", "~/Library/Containers/com.apple.mail/Data/Library/Mail Downloads"]
+strategy = "remove_if_older"
+strategy_args = { days = 30 }
+min_size = 10485760
+
+# ── Communication Apps ────────────────────────────────────
+
+[[items]]
+id = "discord_cache"
+label = "Discord Cache"
+paths = ["~/Library/Application Support/discord/Cache", "~/Library/Application Support/discord/Code Cache", "~/Library/Application Support/discord/GPUCache"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "slack_cache"
+label = "Slack Cache"
+paths = ["~/Library/Application Support/Slack/Cache", "~/Library/Caches/com.slack.Slack"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "zoom_cache"
+label = "Zoom Cache"
+paths = ["~/Library/Caches/us.zoom.xos"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "teams_cache"
+label = "Microsoft Teams Cache"
+paths = ["~/Library/Caches/com.microsoft.teams2"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "telegram_cache"
+label = "Telegram Cache"
+paths = ["~/Library/Caches/ru.keepcoder.Telegram"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "whatsapp_cache"
+label = "WhatsApp Cache"
+paths = ["~/Library/Caches/net.whatsapp.WhatsApp"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "skype_cache"
+label = "Skype Cache"
+paths = ["~/Library/Caches/com.skype.skype"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "wechat_cache"
+label = "WeChat Cache"
+paths = ["~/Library/Caches/com.tencent.xinWeChat"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "wework_cache"
+label = "WeWork Cache"
+paths = ["~/Library/Caches/com.tencent.WeWorkMac"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "feishu_cache"
+label = "Feishu/Lark Cache"
+paths = ["~/Library/Caches/com.feishu"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "tencent_meeting"
+label = "Tencent Meeting Cache"
+paths = ["~/Library/Caches/com.tencent.meeting"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "dingtalk_cache"
+label = "DingTalk Cache"
+paths = ["~/Library/Caches/dd.work.exclusive4aliding", "~/Library/Caches/com.alibaba.AliLang.osx"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── AI Chat Apps ──────────────────────────────────────────
+
+[[items]]
+id = "chatgpt_cache"
+label = "ChatGPT Cache"
+paths = ["~/Library/Caches/com.openai.chat"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "claude_cache"
+label = "Claude Desktop Cache"
+paths = ["~/Library/Caches/com.anthropic.claudefordesktop", "~/Library/Logs/Claude"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Design Tools ──────────────────────────────────────────
+
+[[items]]
+id = "sketch_cache"
+label = "Sketch Cache"
+paths = ["~/Library/Caches/com.bohemiancoding.sketch3", "~/Library/Application Support/com.bohemiancoding.sketch3/cache"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "figma_cache"
+label = "Figma Desktop Cache"
+paths = ["~/Library/Caches/com.figma.Desktop"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "adobe_cache"
+label = "Adobe Cache"
+paths = ["~/Library/Caches/Adobe", "~/Library/Caches/com.adobe", "~/Library/Application Support/Adobe/Common/Media Cache Files"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── Video / Creative Tools ─────────────────────────────────
+
+[[items]]
+id = "finalcut_cache"
+label = "Final Cut Pro Cache"
+paths = ["~/Library/Caches/com.apple.FinalCut"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "davinci_cache"
+label = "DaVinci Resolve Cache"
+paths = ["~/Library/Caches/com.blackmagic-design.DaVinciResolve"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "premiere_cache"
+label = "Adobe Premiere Pro Cache"
+paths = ["~/Library/Caches/com.adobe.PremierePro"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "screenflow_cache"
+label = "ScreenFlow Cache"
+paths = ["~/Library/Caches/net.telestream.screenflow10"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── Media Players ─────────────────────────────────────────
+
+[[items]]
+id = "apple_music_cache"
+label = "Apple Music Cache"
+paths = ["~/Library/Caches/com.apple.Music"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "apple_podcasts_cache"
+label = "Apple Podcasts Cache"
+paths = ["~/Library/Caches/com.apple.podcasts", "~/Library/Containers/com.apple.podcasts/Data/tmp"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "apple_tv_cache"
+label = "Apple TV Cache"
+paths = ["~/Library/Caches/com.apple.TV"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "spotify_cache"
+label = "Spotify Cache"
+paths = ["~/Library/Caches/com.spotify.client"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "plex_cache"
+label = "Plex Desktop Cache"
+paths = ["~/Library/Caches/tv.plex.player.desktop"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "netease_music"
+label = "NetEase Music Cache"
+paths = ["~/Library/Caches/com.netease.163music"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "qq_music"
+label = "QQ Music Cache"
+paths = ["~/Library/Caches/com.tencent.QQMusic", "~/Library/Caches/com.tencent.QQMusicMac"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Gaming Platforms ──────────────────────────────────────
+
+[[items]]
+id = "steam_cache"
+label = "Steam Cache"
+paths = ["~/Library/Caches/com.valvesoftware.steam", "~/Library/Application Support/Steam/htmlcache", "~/Library/Application Support/Steam/appcache", "~/Library/Application Support/Steam/depotcache", "~/Library/Application Support/Steam/logs"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "epic_cache"
+label = "Epic Games Launcher Cache"
+paths = ["~/Library/Caches/com.epicgames.EpicGamesLauncher"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "battlenet_cache"
+label = "Battle.net Cache"
+paths = ["~/Library/Caches/com.blizzard.Battle.net", "~/Library/Application Support/Battle.net/Cache"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "minecraft_cache"
+label = "Minecraft Cache"
+paths = ["~/Library/Application Support/minecraft/logs", "~/Library/Application Support/minecraft/crash-reports", "~/Library/Application Support/minecraft/webcache"]
+strategy = "remove_contents"
+min_size = 52428800
+
+# ── Productivity Apps ─────────────────────────────────────
+
+[[items]]
+id = "obsidian_cache"
+label = "Obsidian Cache"
+paths = ["~/Library/Caches/md.obsidian"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "notion_cache"
+label = "Notion Cache"
+paths = ["~/Library/Caches/notion.id"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "logseq_cache"
+label = "Logseq Cache"
+paths = ["~/Library/Caches/com.logseq"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "raycast_cache"
+label = "Raycast Cache"
+paths = ["~/Library/Caches/com.raycast.macos"]
+strategy = "remove_contents"
+min_size = 52428800
+
+[[items]]
+id = "alfred_cache"
+label = "Alfred Cache"
+paths = ["~/Library/Caches/com.runningwithcrayons.Alfred"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "warp_cache"
+label = "Warp Terminal Cache"
+paths = ["~/Library/Caches/dev.warp.Warp-Stable", "~/Library/Logs/warp.log"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "ghostty_cache"
+label = "Ghostty Terminal Cache"
+paths = ["~/Library/Caches/com.mitchellh.ghostty"]
+strategy = "remove_contents"
+min_size = 1048576
+
+# ── Download Managers ─────────────────────────────────────
+
+[[items]]
+id = "transmission_cache"
+label = "Transmission Cache"
+paths = ["~/Library/Caches/org.m0k.transmission"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "qbittorrent_cache"
+label = "qBittorrent Cache"
+paths = ["~/Library/Caches/com.qbittorrent.qBittorrent"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "downie_cache"
+label = "Downie Cache"
+paths = ["~/Library/Caches/com.downie.Downie"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Video Players ─────────────────────────────────────────
+
+[[items]]
+id = "iina_cache"
+label = "IINA Cache"
+paths = ["~/Library/Caches/com.colliderli.iina"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "vlc_cache"
+label = "VLC Cache"
+paths = ["~/Library/Caches/org.videolan.vlc"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "bilibili_cache"
+label = "Bilibili Cache"
+paths = ["~/Library/Caches/tv.danmaku.bili"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "iqiyi_cache"
+label = "iQIYI Cache"
+paths = ["~/Library/Caches/com.iqiyi.player"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "tencent_video"
+label = "Tencent Video Cache"
+paths = ["~/Library/Caches/com.tencent.tenvideo"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Remote Desktop ────────────────────────────────────────
+
+[[items]]
+id = "teamviewer_cache"
+label = "TeamViewer Cache"
+paths = ["~/Library/Caches/com.teamviewer"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "anydesk_cache"
+label = "AnyDesk Cache"
+paths = ["~/Library/Caches/com.anydesk"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Screenshot / Recording ────────────────────────────────
+
+[[items]]
+id = "cleanshot_cache"
+label = "CleanShot X Cache"
+paths = ["~/Library/Caches/com.cleanshot"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "xnip_cache"
+label = "Xnip Cache"
+paths = ["~/Library/Caches/com.xnipapp.xnip"]
+strategy = "remove_contents"
+min_size = 1048576
+
+# ── Translation Apps ──────────────────────────────────────
+
+[[items]]
+id = "youdao_cache"
+label = "Youdao Dictionary Cache"
+paths = ["~/Library/Caches/com.youdao.YoudaoDict"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "eudic_cache"
+label = "Eudic Cache"
+paths = ["~/Library/Caches/com.eudic"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "bob_cache"
+label = "Bob Translator Cache"
+paths = ["~/Library/Caches/com.bob-build.Bob"]
+strategy = "remove_contents"
+min_size = 1048576
+
+# ── Email Clients ─────────────────────────────────────────
+
+[[items]]
+id = "spark_cache"
+label = "Spark Mail Cache"
+paths = ["~/Library/Caches/com.readdle.smartemail-Mac"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "airmail_cache"
+label = "Airmail Cache"
+paths = ["~/Library/Caches/com.airmail"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "thunderbird_cache"
+label = "Thunderbird Cache"
+paths = ["~/Library/Caches/org.mozilla.thunderbird"]
+strategy = "remove_contents"
+min_size = 10485760
+
+[[items]]
+id = "apple_mail_cache"
+label = "Apple Mail Cache"
+paths = ["~/Library/Caches/com.apple.mail"]
+strategy = "remove_contents"
+min_size = 10485760
+
+# ── Task Management ───────────────────────────────────────
+
+[[items]]
+id = "todoist_cache"
+label = "Todoist Cache"
+paths = ["~/Library/Caches/com.todoist.mac.Todoist"]
+strategy = "remove_contents"
+min_size = 1048576
+
+# ── 3D Tools ──────────────────────────────────────────────
+
+[[items]]
+id = "blender_cache"
+label = "Blender Cache"
+paths = ["~/Library/Caches/org.blenderfoundation.blender"]
+strategy = "remove_contents"
+min_size = 104857600
+
+# ── Browser Profiles (non-browser app cache) ──────────────
+
+[[items]]
+id = "puppeteer_cache"
+label = "Puppeteer Chromium Cache"
+paths = ["~/.cache/puppeteer"]
+strategy = "remove_contents"
+min_size = 104857600
+
+[[items]]
+id = "playwright_browsers"
+label = "Playwright Browsers"
+paths = ["~/Library/Caches/ms-playwright"]
+strategy = "remove_contents"
+min_size = 104857600
